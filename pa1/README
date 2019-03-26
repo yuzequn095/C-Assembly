@@ -1,0 +1,127 @@
+/*
+ * Filename: README
+ * Author: Zequn Yu
+ * Userid: cs30xga
+ * Date: Jan 30th, 2019
+ * Source of help: None.
+ */
+
+Description
+------------
+    This simple program will take 3 inputs in command line and prints a 
+radioactive pinwheel design to stdout. It also will print error infomation if
+any errors occur.
+
+How to compile
+---------------
+    To compile this program, simply navigate to the directory containing the 
+source files for pa1 (which should include the Makefile) and type 'make'.
+
+How to run
+------------
+    To run the program, type the executable name. For example:
+    ./pa1
+    ./pa1 12 '!' '@'
+
+Normal output
+--------------
+    Normal output is printed to stdout. An example of normal output would be 
+the following:
+cs30xga@pi-cluster-017:~/pa1$ ./pa1 12 '!' '@'
+     !@@@@@@@@@@@!     
+    !!!@@@@@@@@@!!!    
+   !!!!!@@@@@@@!!!!!   
+  !!!!!!!@@@@@!!!!!!!  
+ !!!!!!!!!@@@!!!!!!!!! 
+!!!!!!!!!!!@!!!!!!!!!!!
+@@@@@@@@@@@!@@@@@@@@@@@
+ @@@@@@@@@!!!@@@@@@@@@ 
+  @@@@@@@!!!!!@@@@@@@  
+   @@@@@!!!!!!!@@@@@   
+    @@@!!!!!!!!!@@@    
+     @!!!!!!!!!!!@     
+
+Abnormal output
+----------------
+cs30xga@pi-cluster-017:~/pa1$ ./pa1 7 a a
+
+Error: Radioactive Pinwheel size must be an even integer
+
+or 
+
+cs30xga@pi-cluster-017:~/pa1$ ./pa1 str
+
+Error: Radioactive Pinwheel size must be a valid integer
+
+Testing
+--------
+This program was tested using the sample pa1test executable that was provided.
+Both program were run with the same functions and their outputs were redirect
+to two different files (this program to MYSOL and pa1test to REFSOL). These
+output were then compared using the command tool 'diff'. When there were no
+differences in output, it indicated that my program was functioning properly.
+
+Questions
+---------
+1.
+ line 12: sum3V1.s uses tabs after .syntax, sum3V3.s uses space after .syntax.
+ line 41: sum3V3.s has more spaces at the ending of line, highlighted as red.
+ line 54: sum3V1.s has one more blank line at line 54, highlighted as blue.
+
+2.
+ *x = 3;
+
+3.
+ 5
+ Because we have 5 parameter in command line: mystery, what, even, is and argc.
+
+4.
+ dd
+ ndd
+
+5.
+ yy
+ p
+
+6.
+ :set number
+ :set nonumber
+
+7.
+ xG
+ gg
+ G
+
+8.
+ 10j
+ 10k
+
+9.
+ git diff
+
+10.
+ p argv[1]
+
+11.
+ p &endPtr
+
+12.
+ a. p intSize
+ b. p $r0
+
+13.
+ p *endPtr
+
+14.
+ p endPtr
+
+15.
+ p errno
+
+16.
+ When I meet some difficulities in this assignment, I checked the hints in 
+discussion slides and posted my question in Piazza to seek help. When I have a
+segment fault in my code, I re-read the write up and analysis where would go 
+wrong to make this bug happen and fix them. I complete this assignment 
+individully. This is my process for completing this assignment with integrity.
+

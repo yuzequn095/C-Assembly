@@ -1,0 +1,63 @@
+Using array size = 40000
+Initializing array with values using sequential init()
+  [be patient with large values]
+
+Checking that sequential init produced the values as expected
+Checking the first 11 bytes only
+Should print out the string: "CSE30 03ESC"
+CSE30 03ESC
+
+Sequential init time = 0.024180
+
+Initializing array with same values using parallel omp_init()
+  [be less patient with large values]
+
+Num of threads = 4
+
+Checking that parallel omp_init produced the values as expected
+Checking the first 11 bytes only
+Should print out the string: "CSE30 03ESC"
+CSE30 03ESC
+
+Parallel omp_init time = 0.110975
+
+*** parallel omp_init Speed-up: 0.217887 ***
+
+
+Sequential function1 [be patient]
+Sequential function1 time = 0.003269
+
+Min value is: 32
+Max value is: 83
+Squared Sum is: 2601
+Completed in 0.003269 sec
+
+Parallel omp_function1 [don't need to be as patient]
+Parallel omp_function1 time = 0.005090
+
+Min value is: 32
+Max value is: 83
+Squared Sum is: 21341
+Completed in 0.005090 sec
+
+*** parallel omp_function1 Speed-up: 0.642237 ***
+
+
+Sequential function2 [be patient]
+Sequential function2 time = 0.019776
+
+Min value is: 32
+Max value is: 83
+Sqrt Sum is: 309096.154388
+Completed in 0.019776 sec
+
+Parallel omp_function2 [don't need to be as patient]
+Parallel omp_funciton2 time = 0.013074
+
+Min value is: 32
+Max value is: 83
+Sqrt Sum is: 309096.154388
+Completed in 0.013074 sec
+
+*** parallel omp_function2 Speed-up: 1.512586 ***
+

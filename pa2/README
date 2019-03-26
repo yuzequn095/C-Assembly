@@ -1,0 +1,95 @@
+/*
+ * Filename: README
+ * Author: Zequn Yu
+ * Userid: cs30xga
+ * Date: Feb 13th, 2019
+ * Source of help: None.
+ */
+
+ Description
+ ------------
+     This simple program is a crypto program, which can encipher and decipher
+data. It will take 4 inputs in command line and prints encrypted text to stdout
+or file. It also will print error information if any error occurs.
+
+How to compile
+--------------
+     To compile this program, simply navigate to the directory containing the 
+source files for pa2 ( which should include the Makefile ) and type 'make'.
+
+How to run
+-----------
+     To run the program, type the executable name. For example:
+     ./pa2 cse30 0x0A0B0C0D 0x01020304 3 < input
+     ./pa2 minty -3 -5 32 < input
+
+Normal output
+-------------
+     Normal output is printed to stdout. And it will read from input file. An
+example of normal output would be the following:
+./pa2 cse30 0x0A0B0C0D 0x01020304 3 < input
+LEWQ'�:����d8n*�F
+
+Abnormal output
+----------------
+    Abnormal output is printed to stderr. A example of normal output would be 
+the following:
+cs30xga@pi-cluster-017:~/pa2$ ./pa2 pass 0xEE 0xFF 0x11 -2
+
+Usage: ./pa2 passphrase key0 key1 rotateValue
+passphrase   (must have length within the range [4, 8])
+key0         (must be numeric; decimal, octal, or hexadecima)
+key1         (must be numeric; decimal, octal, or hexadecimal)
+rotateValue  (must be a decimal value within the range [+0, +63])
+
+TESTING
+--------
+    This program was tested usng the sample pa2test executable that was 
+provided. Both program were run with the same functions and their output should
+be same cipher text. We run the pa2 and pa2test program and save the output to 
+two files, for example:
+./pa2 cse30 0x0A0B0C0D 0x01020304 3 < input > MYSOL
+~/../public/pa2test cse30 0x0A0B0C0D 0x01020304 3 < input > REFSOL
+    And then I use the command tool 'diff' to compare the content in two files.
+When there were no differences in output, it indicated that my program was 
+functioning properly.
+
+Questions
+----------
+1. 
+  ldr r2, [r3, 8]
+
+2.  
+  :g/mask/#
+
+3.
+ (a) :sp fubar.txt
+ (b) :vsp fubar.txt
+ (c) press ctrl-w and directional key.
+
+4.
+ (a) :%s/cypher/cipher/g
+ (b) :%s/cypher/cipher/gc
+ (c) y
+
+5.
+ :q!
+
+6.
+ (a) :set list
+ (b) :set nolist
+
+7.
+ vi +x file.txt
+
+8.
+ (a) grep 'int' processKey.c
+ (b) grep -B 5 -A 5 'int' processKey.c
+
+9.
+ (a) chmod 000 baz.sh
+ (b) ls -l baz.sh
+
+10.
+  Code by self, and don't make cpmpany's code public. Protect your own code.
+

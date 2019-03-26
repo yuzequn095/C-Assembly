@@ -1,0 +1,103 @@
+/*
+ * Filename: README
+ * Author: Zequn Yu
+ * Userid: cs30xga
+ * Date: Mar 6th, 2019
+ * Source of Help: None.
+ */
+
+Description
+------------
+  In this simple program, it will calculate the number of factors for the
+number user enter in, check if this number is a prime number, and compare
+the run time between two  ways to run calculations.
+
+How to compile
+---------------
+  To compile this program, simply navigate to the directory containing pamt2
+and type 'make'.
+
+How to run it
+--------------
+  To run this program, type the executable name and the number you want to run
+calculation for. For example:
+
+Normal output
+--------------
+  Normal output is printed to stdout. For example:
+
+cs30xga@pi-cluster-017:~/pamt2$ ./pamt2 8081 2324
+
+Calculating number of factors for 8081 with sequential function1()
+  [be patient with large values]
+Number of factors: 2
+8081 is prime
+Completed in 0.001316 sec
+
+Calculating number of factors for 8081 with OpenMP function1()
+  [be less patient]
+Num of threads = 4
+Number of factors: 2
+8081 is prime
+Completed in 0.006847 sec
+
+*** function1 Speed-up: 0.192230 ***
+
+
+Calculating number of factors for 2324 with sequential function1()
+  [be patient with large values]
+Number of factors: 12
+2324 is not prime
+Completed in 0.000411 sec
+
+Calculating number of factors for 2324 with OpenMP function1()
+  [be less patient]
+Num of threads = 4
+Number of factors: 12
+2324 is not prime
+Completed in 0.006288 sec
+
+*** function1 Speed-up: 0.065423 ***
+
+Abnormal output
+----------------
+  Abnormal output will be printed to stderr, for example:
+
+  cs30xga@pi-cluster-017:~/pamt2$ ./pamt2
+
+  Usage: ./pamt2 num1 [num2 num3 ...]
+
+TESTING
+---------
+  This program was tested using the sample pamt2test executable that was
+provided. I run program with same functions, command line arguments, and 
+redirect mine output to MYSOL and test file's to REFSOL. Then I use tool
+'diff' to compare the results. The number of prime and result if it is prime
+should be same, but run time and speed up may be different.
+
+Questions
+----------
+1. 
+  It doesn't matter. Because whether or not this number is prime, the process
+of calculating in loop must happen. So whatever number user enter in to 
+this program, the factor which will influence the run time is the value of 
+number rather than if it is prime number. In other words, if the number is 
+big enough, so the multiple thread can optimize more, then the sequential
+version will take much longer time than the parallel version; if the number
+is small enough, so the multiple thread won't optimize more and it even 
+will take more resources for multiple thread, then the sequential version 
+will take much shorter time than the parallel version.
+
+2. 
+  I think 3) the time it takes to complete the sequtntial or parallel 
+are more important in general. As a program user, I care more about the result,
+the execute time, rather than what is the speed-up and how many threads
+availale. If the speed-up is bigger but the run time is really long I still
+will think this is a 'bad' program, and I don't want to know things about
+threads behind the program when I just want to use it.
+
+3.
+  workstation - 3500 
+  ieng6 - 450000
+  pi-cluster - 80000
+

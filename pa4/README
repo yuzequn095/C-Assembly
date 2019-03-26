@@ -1,0 +1,89 @@
+/*
+ * Filename: README
+ * Author: Zequn Yu
+ * Userid: cs30xga
+ * Date: Mar 13th, 2019
+ * Source of Help: None.
+ */
+
+Description
+-------------
+  This program will build an interactive program that build a database of 
+how frequently two words occur after one another, and suggest the most
+likely word to follow the word the user inputs. This program will keep 
+running unless user enter ^D to quit.
+
+How to compile
+---------------
+  To compile this program, simply navigate to the directory containing the
+source files for pa4 ( which should include the Makefile ) and type 'make'.
+
+How to run
+-----------
+  To run this program, type the executable name for it, for example:
+  ./pa4 -v test.vocab -s test.sent
+  ./pa4 -n 2 -v test.vocab -s test.sent
+
+Normal output
+-------------
+  Normal output is printed to stdout. An example of normal output would 
+be the following:
+cs30xga@pi-cluster-017:~/pa4$ ./pa4 -v example.vocab -s example.sent  
+
+	Loaded 24 word(s) from vocabFile (example.vocab)
+
+	Counting bigrams from sentenceFile (example.sent) ... done!
+
+	next  <word>: display the next most likely word for a given word
+	stats <word>: display all words that may follow the given word, 
+	              along with their observed counts
+	help        : display this help message
+
+>> next bee
+
+        -> law
+
+>> bye
+
+Abnormal output
+---------------
+  Abnormal output is printed to stderr. A example of abnormal output would
+be the following:
+cs30xga@pi-cluster-017:~/pa4$ ./pa4 -v test.vocab
+
+       Missing the sentenceFile required argument.
+
+Usage: ./pa4 [-n num] -v vocabFile -s sentenceFile [-h]
+See './pa4 -h' for more details.
+
+Testing
+--------
+  This program was tested using the sample pa4test executable that was 
+provided. Both program were run with same functions and their output 
+should be same. So I can run my program and test program by entering same
+command line arguments to check if the output is same, they should be same
+except the path for files(pa4 and pa4test).
+
+Questions
+-----------
+1.
+  :colorscheme
+  :colorscheme desert
+
+2.
+  Redirect(>) is used to pass output to either a file or stream.
+  Pipe(|) is used to pass output to another program or utility.
+
+3.
+  First malloc allocates the memory and returns the pointer to the allocated
+memory.
+  Calloc also allocates memory on heap like malloc does. The only difference
+is that calloc also initialize the memory with zero.
+  Realloc will change the size of memory block on heap.
+
+4.
+  First I will post my question on Piazza with screeshoot of my code to ask 
+for hints and help. And then I will try my best to let my program compile and
+run at least, if I have more time, I will re-read write-up and search 
+related topic on Piazza to seek any hints which can help me solve my programs.
+

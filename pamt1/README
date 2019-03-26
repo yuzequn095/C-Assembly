@@ -1,0 +1,160 @@
+/*
+ * Filename: README
+ * Author: Zequn Yu
+ * Userid: cs30xga
+ * Date: Feb 22th, 2019
+ * Source of Help: None.
+ */
+
+Description
+------------
+  In this simple program, I write three algorithms: init, function1 and 
+funtion2, run then with OpenMp and without OpenMp to compare difference 
+betweeen run time.
+
+How to compile
+---------------
+  To compile this program, simply navigate to the directory containing pamt1,
+and type 'make'.
+
+How to run it
+--------------
+  To run this program, type the executable name and integer. Foe example:
+  ./pamt1 40000
+
+Normal output
+--------------
+  Normal output is printed to stdout. For example:
+
+[cs30xga@ieng6-201]:pamt1:590$ ./pamt1 40000
+Using array size = 40000
+Initializing array with values using sequential init()
+  [be patient with large values]
+
+Checking that sequential init produced the values as expected
+Checking the first 11 bytes only
+Should print out the string: "CSE30 03ESC"
+CSE30 03ESC
+
+Sequential init time = 0.002533
+
+Initializing array with same values using parallel omp_init()
+  [be less patient with large values]
+
+Num of threads = 8
+
+Checking that parallel omp_init produced the values as expected
+Checking the first 11 bytes only
+Should print out the string: "CSE30 03ESC"
+CSE30 03ESC
+
+Parallel omp_init time = 0.004752
+
+*** parallel omp_init Speed-up: 0.533095 ***
+
+
+Sequential function1 [be patient]
+Sequential function1 time = 0.000283
+
+Min value is: 32
+Max value is: 83
+Squared Sum is: 2601
+Completed in 0.000283 sec
+
+Parallel omp_function1 [don't need to be as patient]
+Parallel omp_function1 time = 0.004338
+
+Min value is: 32
+Max value is: 83
+Squared Sum is: 37896
+Completed in 0.004338 sec
+
+*** parallel omp_function1 Speed-up: 0.065142 ***
+
+
+Sequential function2 [be patient]
+Sequential function2 time = 0.000547
+
+Min value is: 32
+Max value is: 83
+Sqrt Sum is: 309096.154388
+Completed in 0.000547 sec
+
+Parallel omp_function2 [don't need to be as patient]
+Parallel omp_funciton2 time = 0.003868
+
+Min value is: 32
+Max value is: 83
+Sqrt Sum is: 309096.154388
+Completed in 0.003868 sec
+
+*** parallel omp_function2 Speed-up: 0.141329 ***
+
+Abnormal output
+----------------
+  Abnormal output will be printed to stderr, for example:
+[cs30xga@ieng6-201]:pamt1:590$ ./pamt1 1
+
+Usage: ./pamt1 array_size
+   array_size  (must be >= 11 and <= 4294967295)
+
+Testing
+----------
+  This program was tested using the sample pamt1test executable that was 
+provided. I run program with same functions and redirect mine output to MYSOL
+and test file's to REFSOL. Then I use tool 'diff' to compare the results. 
+There should be no significant difference be printed(run time may vary), 
+then it is correct.
+
+Questions
+----------
+1. 
+  ieng6 shows the larger speed-up.
+
+2. 
+  B240workstation runs faster.
+
+3.
+  Because workstation has 1 socket  with 4 cores per socket and 
+2 threads per core for 8 CPU. And ieng6 has 8 sockets with 1 core per socket
+and 1 thread per core for 8 CPU.
+  So, workstation has more threads per core for a total 8 logical CPU, then
+it could run faster.
+  And each core doesn't share its CPU rescources with multiple threads in
+ieng6, so it could speed-up more in multuple thread.
+
+4.
+  B240: 750 for 1.0 (around 0.951159)
+        2500 for 2.0 (around 1.937606)
+  ieng6: 150000 for 1.0 (around 0.952197)
+         400000 for 2.0 (around 2.085450)
+  pi: 50000 for 1.0 (around 1.168587)
+      150000 for 2.0 (around 2.034472)
+
+5.
+  B240: 4000 for 1.0 (around 1.002997)
+        7500 for 2.0 (around 2.092296)
+  ieng6: 1000000 for 1.0 (around 1.054221)
+         3400000 for 2.0 (around 1.971803)
+  pi:    70000 for 1.0 (around 0.938143)
+         750000 for 2.0 (around 1.900434)
+
+6.
+  B240: 2000 for 1.0 (around 0.890133)
+        6000 for 2.0 (around 2.180315)
+  ieng6: 500000 for 1.0 (around 1.159185)
+         1500000 for 2.0 (around 2.139214)
+  pi:  15000 for 1.0 (around 1.086396)
+       70000 for 2.0 (around 1.823142)
+
+7.
+  It makes less speed up, and it runs slower.
+
+8.
+  It makse less speed up beacause it needs to share more resouces with more 
+multiple threads in program so it make less speed up.
+  It runs slower because here is a more multiple threads so data will 
+communicate and switch more times to run program slower.
+  In one word, program has to wait all multiple threads inside loop runs and 
+then it could go next loop round, so it will run slower and get worse speed up.
+  

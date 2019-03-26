@@ -1,0 +1,63 @@
+==== Testing isOdd.s ====
+Zero:                          PASSED, (+0.50)
+Positive odd:                  PASSED, (+0.50)
+Positive even:                 PASSED, (+0.50)
+Negative even:                 PASSED, (+0.50)
+Total for file isOdd.s: 2.00
+
+Total so far: 2.00/15.00
+
+==== Testing processKey.c ====
+Number too large:              PASSED, (+0.50)
+Invalid chars:                 PASSED, (+0.50)
+Decimal:                       PASSED, (+0.50)
+Large Hex: Deadbeef:           PASSED, (+0.50)
+Total for file processKey.c: 2.00
+
+Total so far: 4.00/15.00
+
+==== Testing processRotateValue.s ====
+Number too small:              PASSED, (+0.50)
+Invalid chars:                 PASSED, (+0.50)
+Below bounds:                  PASSED, (+0.50)
+Valid odd decimal:             PASSED, (+0.50)
+Valid odd decimal:             PASSED, (+0.50)
+Valid small decimal:           PASSED, (+0.50)
+Total for file processRotateValue.s: 3.00
+
+Total so far: 7.00/15.00
+
+==== Testing xorBytes.s ====
+One byte/1's mask:             PASSED, (+0.50)
+Two bytes/random mask:         PASSED, (+0.50)
+Multiple bytes/random:         PASSED, (+0.50)
+Multiple bytes/zero mask:      PASSED, (+0.50)
+Lots of bytes/random:          PASSED, (+0.50)
+Multiple bytes/complement:     PASSED, (+0.50)
+Total for file xorBytes.s: 3.00
+
+Total so far: 10.00/15.00
+
+==== Testing generateMask.s ====
+Simple key/pass:               PASSED, (+0.50)
+Simple key/complement:         PASSED, (+0.50)
+Total for file generateMask.s: 1.00
+
+Total so far: 11.00/15.00
+
+==== Testing rotate.s ====
+Rotate Val 0:                  PASSED, (+0.50)
+Odd/no overflow:               PASSED, (+0.50)
+Even/no overflow/ % 4:         PASSED, (+0.50)
+Odd/overflow:                  PASSED, (+0.50)
+Even/overflow:                 PASSED, (+0.50)
+Odd/rotate around:             PASSED, (+0.50)
+Even/rotate around:            PASSED, (+0.50)
+Rotate val = large negative:   PASSED, (+0.50)
+Total for file rotate.s: 4.00
+
+Total so far: 15.00/15.00
+
+
+Final total: 15.00/15.00
+

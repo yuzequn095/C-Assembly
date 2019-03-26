@@ -1,0 +1,74 @@
+/*
+ * Filename: README
+ * Author: Zequn Yu
+ * Userid: cs30xga
+ * Date: Mar 6th, 2019
+ * Source of Help: None.
+ */
+
+Debug 2
+--------
+1.
+ Effect: error: break statement not within loop or switch
+ Line: 41 in debug2.c
+ Before: while(turn); {
+ After: while(turn) {
+ Explain: We need to delete ';' to make loop works.
+
+2.
+ Effect: error: array type has incomplete element type
+ Line: 19 in printBoard.c
+ Before: void printBoard( long board[][] ){
+ After: void printBoard( long board[][3] ){
+ Explain: The second and subsequent dimensions must be given to make 
+          2-dimension array argument function works correctly.
+
+3.
+ Effect: Print error information: "yIndex not a number\n" "xIndex not a
+         number\n"
+ Line: 49, 68 in parsePlay.c
+ Before: pos = '\0';
+ After: *pos = '\0';
+ Explain: We need to change the value which pos pointer to rather than pos 
+          itself.
+
+4.
+ Effect: Segment fault.
+ Line: 59, 64 in checkMove.s
+ Before: add    r0, r3, r3;   add    r3, r1, r3
+ After: add     r0, r0, r3;   add     r3, r0, r1
+ Explain: In the first part, we should update memory from borad(r0); in the 
+          second part, we should update memory from what we got from part 1.
+
+5.
+ Effect: Invalid position error.
+ Line: 71 in checkMove.s
+ Before: Blank line.
+ After: b       end
+ Explain: We should set a b to jump over the invalid return if it is valid.
+
+6.
+ Effect: Can't turn player correctly.
+ Line: 75 in debug2.c
+ Before: turn = ((turn = 1) ? 2 : 1);
+ After: turn = ((turn == 1) ? 2 : 1);
+ Explain: We should check if turn is equal to 1 rather than let it be 1.
+
+7.
+ Effect: Incorrect valid position check.
+ Line: 49, 55 in checkMove.s
+ Before: bge     INVALID
+ After: bgt     INVALID
+ Explain: The index 2 should be valid.
+
+8.
+ Effect: Can't check win correctly.
+ Line: 26, 27, 28 in checkWin.c
+ Before: long xWinArray[3] = {0}; 
+         long yWinArray[3] = {0}; 
+	 long dWinArray[2] = {0};
+ After: static long xWinArray[3] = {0};
+        static long yWinArray[3] = {0};
+	static long dWinArray[2] = {0};
+ Explain: We need to set variable as static to let it retain value from 
+          previous call.

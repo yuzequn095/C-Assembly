@@ -1,0 +1,64 @@
+/*
+ * Filename: README
+ * Author: Zequn Yu
+ * Userid: cs30xga
+ * Date: Feb 22th, 2019
+ * Source of Help: None
+ */
+1.
+ Effect: warning: implicit declaration of function 'exit' 
+ Line: 9 in main.c
+ Before: (blank line)
+ After: #include<stdlib.h>
+ Explain: It needs to inlcude stdlib.h to use exit
+
+2.
+ Effect: warning: format '%s' expects argument of type 'char *', but argument 2
+ has type 'int' 
+ Line: 56 in main.c
+ Before: (void) printf("You found %s palindrome(s)\n", numPalindromes);
+ After: (void) printf("You found %d palindrome(s)\n", numPalindromes);
+ Explain: C needs %d to print integer.
+
+3.
+ Effect: Error: unaligned opcodes detected in executable segment
+ Line: 20 in reverse.s
+ Before: (blank line)
+ After: .align 2
+ Explain: I need to set align for assemble file.
+
+4.
+ Effect: Error: immediate expression requires a # prefix
+ Line: 7 in reverse.s
+ Before: (blank line)
+ After: .syntax unified
+ Explain: I need to set syntax for assembly file.
+
+5.
+  Effect: Wrong loop condition so it won't read all input 
+  Line: 38 in main.c
+  Before: --i
+  After: ++i
+  Explain: So it could read all input from first to last
+
+6. 
+  Effect: Infinite loop
+  Line: 79 in reverse.s
+  Before: add r1, r1, 1
+  After: sub r1, r1, 1
+  Explain: We need to sub r1 to reach the ending of loop
+
+7.
+  Effect: Wrong data be stored
+  Line: 39 in swapChar.s
+  Before: str	r3, [r0]
+  After: strb	r3, [r0]
+  Explain: Because we want to store char, so use strb
+
+8.
+  Effect: The value pop returned is wrong.
+  Line: 88 in findEnd.s
+  Before: pop	{fp, lr}
+  After: pop	{fp, pc}
+  Explain: Should return to {fp, pc} when .s file done
+

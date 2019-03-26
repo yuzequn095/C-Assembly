@@ -1,0 +1,98 @@
+/*
+ * Filename: README
+ * Author: Zequn Yu
+ * Userid: cs30xga
+ * Date: Feb 27th, 2019
+ * Source of Help: None.
+ */
+
+Description
+-------------
+  This program has two parts, the generate part and query part.
+  In the generate part, the program will take two inputs in command line and
+generate a file with words read from input file. In the query part, the 
+program will take one or two inputs in command line and ask user to enter 
+the word they want to query anagram from file generated in first part, and 
+it will keep asking enter word until user enter ^D.
+
+How to compile
+---------------
+  To compile this program, simply navigate to the directory containing the 
+source files for pa3 ( which should include the Makefile) and type 'make'.
+
+How to run
+----------
+  To run this program, type the executable name for each part, for example:
+  ./generate -i myWords -o myAna.ano
+  ./query -f myAna.ano
+
+Normal output
+--------------
+  Normal output is printed to stdout. And it will read from file generated 
+at first part. An example of normal output would be the following:
+  cs30xga@pi-cluster-017:~/pa3$ ./generate -i myWords -o myAnagrams.ano
+
+  Generated anagram file (myAnagrams.ano) with 5 anagrams.
+
+
+  cs30xga@pi-cluster-017:~/pa3$ ./query myAnagrams.ano
+
+  Enter a word to search for anagrams [^D to exit]: ear
+
+  Anagrams found: are
+
+Abnormal output
+----------------
+  Abnormal output is printed to stderr. A example of abnormal output would 
+be the following:
+  cs30xga@pi-cluster-017:~/pa3$ ./generate -i nonExe
+
+    Error opening input file (nonExe); invalid file
+
+TESTING
+--------
+  This program was tested using the sample pa3test executable that was
+provided. Both program were run with the same functions and their output
+should be same. In generate part, I run with same word file and save the 
+output from my program and test program to two different files. And then I
+save the content of two files to MYSOL and REFSOL, then I use tool diff
+to compare them. For example:
+./pa3 generate -i myWords -o myAna.ano
+~/../public/pa3test generate -i myWords -o refAna.ano
+hexdump -C myAna.ano > MYSOL
+hexdump -C refAna.ano > REFSOL
+  And then I run query part using my progrma and test program by entering
+same words and then check if the result of query are same.
+
+Questions
+---------
+1.
+  tab
+
+2.
+  grep -p '\t' *.c
+
+3.
+  (a) 4 byte.
+  (b) Because it is a pointer.
+
+4.
+  (a) We do not know the exactly size of variable we want to allocate for.
+  (b) We want to add more to the memory allocated so we wish could make 
+      memory allocated larger later.
+
+5.
+  table.tablePtr[i].dataPtr[i].counts[k]
+
+6. 
+  ~
+
+7.
+  !!
+
+8.
+  You should complete the program assignemnt by yourself to practice your 
+coding skill. It is meaningless if I let you copy my work because you will
+lost as well in next program assignment. I highly recommand you start early 
+next time and try your best to get partial credits for this assignment. We
+can start together next time so you can finish it earlier.

@@ -1,0 +1,89 @@
+==== Testing countChars.c ====
+Contains each letter:          PASSED, (+0.50)
+Upper/lower case:              PASSED, (+0.50)
+Word is null:                  PASSED, (+0.50)
+All same letter:               PASSED, (+0.50)
+Long word:                     PASSED, (+0.50)
+Total for file countChars.c: 2.50
+
+Total so far: 2.50/20.00
+
+==== Testing getHashcode.s ====
+Sparse count array:            PASSED, (+0.50)
+Full count array:              PASSED, (+0.50)
+Empty count array:             PASSED, (+0.50)
+One letter large count:        PASSED, (+0.50)
+Large count num:               PASSED, (+0.50)
+Total for file getHashcode.s: 2.50
+
+Total so far: 5.00/20.00
+
+==== Testing assembleAnagram.s ====
+Small word, Count Array:       PASSED, (+0.50)
+Small word, Original Word:     PASSED, (+0.50)
+Same letter, Count Array:      PASSED, (+0.50)
+Same letter, Original Word:    PASSED, (+0.50)
+Under Max len, CA:             PASSED, (+0.50)
+Under Max len, OW:             PASSED, (+0.50)
+Upper/lower case, CA:          PASSED, (+0.50)
+Upper/lower case, OW:          PASSED, (+0.50)
+Over Max len, OW:              PASSED, (+0.50)
+
+===================================
+Pass only ONE of the below cases for full credit
+For final turnin make sure you pass the non truncated case
+
+Over Max len, CA:              PASSED, (+0.50)
+Over Max len, CA Truncated:    FAILED, (+0.00)
+Total for file assembleAnagram.s: 5.00
+
+Total so far: 10.00/20.00
+
+==== Testing hashcodeCmp.s ====
+Smaller hashcode:              PASSED, (+0.50)
+Larger hashcode:               PASSED, (+0.50)
+Equal hashcode:                PASSED, (+0.50)
+Large hashcode num:            PASSED, (+0.50)
+Total for file hashcodeCmp.s: 2.00
+
+Total so far: 12.00/20.00
+
+==== Testing countsCmp.s ====
+both arrays zero:              PASSED, (+0.50)
+one array zero, one populated: PASSED, (+0.50)
+one array populated, one zero: PASSED, (+0.50)
+both arrays populated and equa PASSED, (+0.50)
+Total for file countsCmp.s: 2.00
+
+Total so far: 14.00/20.00
+
+==== Testing anagramCmp.s ====
+Same hashcode, Same counts:    PASSED, (+0.50)
+Larger hashcode, Same counts:  PASSED, (+0.50)
+Smaller hashcode, Same counts: PASSED, (+0.50)
+Same hashcode, Smaller counts: PASSED, (+0.50)
+Same hashcode, Larger counts:  PASSED, (+0.50)
+Smaller hashcode, Larger count PASSED, (+0.50)
+Total for file anagramCmp.s: 3.00
+
+Total so far: 17.00/20.00
+
+==== Testing getURemainder.s ====
+Evenly divisible:              PASSED, (+0.50)
+Not evenly divisible:          PASSED, (+0.50)
+Evenly divisible, big:         PASSED, (+0.50)
+Not evenly divisible, big:     PASSED, (+0.50)
+Total for file getURemainder.s: 2.00
+
+Total so far: 19.00/20.00
+
+==== Testing getBucketIndex.s ====
+Hashcode < tablesize:          PASSED, (+0.50)
+Hashcode > tablesize:          PASSED, (+0.50)
+Total for file getBucketIndex.s: 1.00
+
+Total so far: 20.00/20.00
+
+
+Final total: 20.00/20.00
+
